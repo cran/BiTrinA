@@ -1,0 +1,35 @@
+useDynLib(BiTrinA)
+
+export(
+    binarize.BASC,
+    binarize.kMeans,
+    binarizeMatrix,
+    trinarizeMatrix,
+    TASC
+)
+
+import(methods)
+
+importFrom("graphics", "plot", "par", "axis", "legend")
+importFrom("stats", "runif", "kmeans", "p.adjust")
+
+importFrom(
+    diptest,
+    dip.test
+)
+
+exportClasses(
+    BinarizationResult,
+    BASCResult,
+    TrinarizationResult,
+    TASCResult
+)
+
+exportMethods(
+    show,
+    print,
+    plot,
+    plotStepFunctions
+    #,
+    #initialize
+)
