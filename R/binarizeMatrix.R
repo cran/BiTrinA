@@ -29,8 +29,8 @@ binarizeMatrix <- function(mat, method=c("BASCA","BASCB","kMeans"), adjustment="
 	return(bin)
 }
 
-trinarizeMatrix <- function(mat, method=c("TASCA","TASCB"), adjustment="none", ...){
-	triFunc <- switch(match.arg(method, c("TASCA","TASCB")),
+trinarizeMatrix <- function(mat, method=c("TASCA","TASCB","kMeans"), adjustment="none", ...){
+	triFunc <- switch(match.arg(method, c("TASCA","TASCB","kMeans")),
 		"TASCA" = function(x, ...){
 			tri <- TASC(x, method="A", ...)
 			return(c(tri@trinarizedMeasurements, 
@@ -38,6 +38,11 @@ trinarizeMatrix <- function(mat, method=c("TASCA","TASCB"), adjustment="none", .
 		},
 		"TASCB" = function(x, ...){
 			tri <- TASC(x, method="B", ...)
+			return(c(tri@trinarizedMeasurements, 
+				list(tri@threshold1, tri@threshold2, tri@p.value)))
+		},
+		"kMeans" = function(x, ...){
+			tri <- trinarize.kMeans(x, ...)
 			return(c(tri@trinarizedMeasurements, 
 				list(tri@threshold1, tri@threshold2, tri@p.value)))
 		})

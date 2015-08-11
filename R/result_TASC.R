@@ -26,7 +26,8 @@ setClass(
 			"TASC A",
 			"TASC A (min)",
 			"TASC B",
-			"TASC B (min)"
+			"TASC B (min)",
+			"k-Means"
 		)
 		for(i in seq(1, length(valid_methods))){
 			valid_methods_string <- ifelse(i==1, sprintf("\"%s\"", valid_methods[i]), sprintf("%s, \"%s\"", valid_methods_string, valid_methods[i]))

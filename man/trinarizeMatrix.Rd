@@ -8,7 +8,7 @@ Trinarizes a matrix of measurements all at once, and returns the trinarized vect
 }
 \usage{
 trinarizeMatrix(mat, 
-               method = c("TASCA", "TASCB"), 
+               method = c("TASCA", "TASCB","kMeans"), 
                adjustment = "none", 
                ...)
 }
@@ -17,13 +17,13 @@ trinarizeMatrix(mat,
 	A n x m matrix comprising m raw measurements of n features.
 }
 \item{method}{
-	The trinarization algorithm to be used. \code{method="TASCA"} calls \code{\link{TASC}} with \code{method="A"}. \code{method="TASCB"} calls \code{\link{TASC}} with \code{method="B"}.
+	The trinarization algorithm to be used. \code{method="TASCA"} calls \code{\link{TASC}} with \code{method="A"}. \code{method="TASCB"} calls \code{\link{TASC}} with \code{method="B"}. \code{method="kMeans"} calls \code{\link{trinarize.kMeans}}.
 }
 \item{adjustment}{
 	Specifies an optional adjustment for multiple testing that is applied to the p-values (see \code{\link{p.adjust}} for possible values). By default, no adjustment is applied.
 }
 \item{\dots}{
-	Further parameters that are passed to the respective trinarization methods (\code{\link{TASC}}).
+	Further parameters that are passed to the respective trinarization methods (\code{\link{TASC}}, \code{\link{trinarize.kMeans}}).
 }
 }
 \value{
@@ -31,7 +31,7 @@ trinarizeMatrix(mat,
 }
 
 \seealso{
-\code{\link{TASC}}, \code{\link{p.adjust}}
+\code{\link{TASC}}, \code{\link{trinarize.kMeans}}, \code{\link{p.adjust}}
 }
 \examples{
 tri <- trinarizeMatrix(t(iris[,1:4]))

@@ -69,7 +69,7 @@ In several consecutive cycles the algorithm then updates this clustering by calc
 In this way the algorithm tries to minimize the sum over the squared distance of the data points to their respective cluster center. This sum is given by
 \[ \sum_{j=1}^{k}{\sum_{u_i \in C_j}{\left( u_i - \mu_j \right)^2}},\]
 where $C_j$ is the $j$-th Cluster, $u_i$ is one value of the input vector, and $\mu_j$ is the center of the $j$-th cluster. 
-For binarization purposes the number of clusters $k$ is set to 2.
+For binarization purposes the number of clusters $k$ is set to 2 (for trinarization $k = 3$).
 
 
 \subsection{Binarization Across multiple SCales (BASC)}
