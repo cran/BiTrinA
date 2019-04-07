@@ -1,4 +1,4 @@
-useDynLib(BiTrinA)
+useDynLib(BiTrinA, .registration = TRUE)
 
 export(
     binarize.BASC,
