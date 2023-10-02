@@ -41,9 +41,8 @@ plot(result, twoDimensional=TRUE)
 \seealso{
 \code{\link{kmeans}}, 
 \code{\linkS4class{BinarizationResult}}, 
-\code{\link[BoolNet:BoolNet-package]{BoolNet}}
+\code{\link[BoolNet:binarizeTimeSeries]{BoolNet::binarizeTimeSeries()}}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ k-means
-          cluster }
+\keyword{ k-means cluster }

@@ -44,5 +44,4 @@ plot(result, twoDimensional=TRUE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ k-means
-          cluster }
+\keyword{ k-means cluster }

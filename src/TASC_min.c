@@ -223,7 +223,7 @@ void calc_final_results_tri_min(final_result_tri* result, int_matrix* v, dbl_arr
 		*(result->p) += (double)(t_star >= t_zero);
 	}
 	#if !DEBUG_MODE
-	PutRNGstate();
+	//PutRNGstate();
 	#endif
 
 	//divide p by the number of samples, which is the maximal possible value for p
@@ -253,7 +253,7 @@ int alloc_Accelerator_Memory_tri_min(int value_count){
 /*
  * Free the memory used for accelerating computations. This method also sets all pointers to 0.
  */
-void free_Accelerator_Memory_tri_min(){
+void free_Accelerator_Memory_tri_min(void){
 
 	destroy_dbl_array(e_tri_min);
 	destroy_int_array(e_returned_tri_min);
